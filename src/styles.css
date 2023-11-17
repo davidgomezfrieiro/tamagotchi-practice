@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-transform: uppercase;
+  background-color: rgb(9, 15, 64);
+}
+h1 {
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+button {
+  background-color: rgb(132, 16, 140);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(9, 15, 64);
+}

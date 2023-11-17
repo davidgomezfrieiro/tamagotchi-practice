@@ -1,0 +1,38 @@
+/* Estilos para el contenedor del componente Pet */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div.pet-container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Estilos para el título de la mascota */
+h2 {
+  color: #ffffff;
+}
+
+/* Estilos para el nivel de hambre */
+p {
+  color: #ffffff;
+}
+
+/* Estilos para el botón de alimentar */
+button {
+  background-color: #4caf50; /* Color de fondo verde */
+  color: white; /* Texto en color blanco */
+  padding: 10px 20px; /* Relleno interno */
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Cambia el color del botón al pasar el ratón sobre él */
+button:hover {
+  background-color: #45a049;
+}
