@@ -10,26 +10,10 @@ body {
   padding: 0;
   height: 100%;
   text-transform: uppercase;
-  background-color: rgb(9, 15, 64);
+  background-color: rgb(9, 0, 52);
 }
 h1 {
   color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
-}
-button {
-  background-color: rgb(132, 16, 140);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-size: 1.2rem;
-  padding: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-button:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(9, 15, 64);
 }

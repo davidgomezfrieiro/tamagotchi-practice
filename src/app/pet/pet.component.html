@@ -1,7 +1,11 @@
-<div>
-  <h2>Pet</h2>
+<div class="levelBox">
   <p>Hunger: {{ hungerLevel }}</p>
   <p>Sleepiness: {{ sleepLevel }}</p>
-  <button (click)="feed()">Alimentar</button>
-  <button (click)="sleep()">Dormir</button>
+  <p>Dirtiness: {{ dirtLevel }}</p>
+</div>
+<img src="assets/monster.png" alt="Mascota" width="60%" height="60%" />
+<div class="buttonBox">
+  <button (click)="feed()">Feed</button>
+  <button (click)="sleep()">Sleep</button>
+  <button (click)="clean()">Clean</button>
 </div>

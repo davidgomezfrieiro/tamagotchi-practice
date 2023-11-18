@@ -11,27 +11,71 @@ import { CommonModule } from '@angular/common';
 export class PetComponent {
   hungerLevel: number = 0;
   sleepLevel: number = 0;
+  dirtLevel: number = 0;
+  sleeping: boolean = false;
+
+  public getSleepLevel() {
+    return this.sleepLevel;
+  }
+
+  public setSleeping(value: boolean) {
+    this.sleeping = value;
+  }
 
   ngOnInit() {
-    // Inicia un contador que reduce el nivel de hambre cada 5 segundos
-
     setInterval(() => {
       this.decreaseHunger();
-    }, 5000);
+    }, 20000);
 
     setInterval(() => {
       this.decreaseSleep();
-    }, 5000);
+    }, 60000);
+
+    setInterval(() => {
+      this.increaseDirt();
+    }, 40000);
   }
 
   feed() {
-    this.hungerLevel += 10;
+    if (this.hungerLevel <= 100) {
+      this.hungerLevel += 10;
+    }
+
+    if (this.hungerLevel >= 100) {
+      this.hungerLevel = 100;
+    }
+  }
+
+  clean() {
+    if (this.dirtLevel >= 10) {
+      this.dirtLevel -= 10;
+      if (this.dirtLevel < 10) {
+        this.dirtLevel = 0;
+      }
+    } else {
+      this.dirtLevel = 0;
+    }
   }
 
   sleep() {
-    setInterval(() => {
+    var increaseSleep = () => {
+      this.setSleeping(true);
       this.sleepLevel += 10;
-    }, 3000);
+    };
+    var sleepLevel = () => {
+      return this.getSleepLevel();
+    };
+    var falseSleeping = () => {
+      this.setSleeping(false);
+    };
+    var interval = setInterval(function () {
+      if (sleepLevel() == 100) {
+        clearInterval(interval);
+        falseSleeping();
+        return;
+      }
+      increaseSleep();
+    }, 2000);
   }
 
   private decreaseHunger() {
@@ -40,15 +84,23 @@ export class PetComponent {
     if (this.hungerLevel < 0) {
       this.hungerLevel = 0;
     }
-    // Puedes agregar lógica adicional aquí si es necesario
   }
 
   private decreaseSleep() {
-    this.sleepLevel -= 5;
+    if (this.sleeping == false) {
+      this.sleepLevel -= 5;
+    }
 
     if (this.sleepLevel < 0) {
       this.sleepLevel = 0;
     }
-    // Puedes agregar lógica adicional aquí si es necesario
+  }
+
+  private increaseDirt() {
+    this.dirtLevel += 5;
+
+    if (this.dirtLevel > 100) {
+      this.dirtLevel = 100;
+    }
   }
 }
